@@ -21,17 +21,28 @@ function App() {
   }
   function handleSubmit(e){
     e.preventDefault()
-
+    setTableData(prev=>{return {...prev, formData}})
+    setFormData(prev=>{return{
+      firstname:"", 
+      lastname:"", 
+      age:"",
+      phone:""}
+    })
   }
-  console.log(formData)
+  console.log(tableData)
   return (
     <div className='card-box'>
 
     <form onSubmit={handleSubmit}>
-      <input placeholder='Firstname' onChange={onHandleChange} name="firstname"></input>
-      <input placeholder='Lastname' onChange={onHandleChange} name="lastname"></input>
-      <input placeholder='Age' onChange={onHandleChange} name="age"></input>
-      <input placeholder='Phnoe.no' onChange={onHandleChange} name="phone"></input>
+      <input placeholder='Firstname' 
+      onChange={onHandleChange} name="firstname" value={formData.firstname}>
+      </input>
+      <input placeholder='Lastname' 
+      onChange={onHandleChange} name="lastname" value={formData.lastname}></input>
+      <input placeholder='Age' 
+      onChange={onHandleChange} name="age" value={formData.age}></input>
+      <input placeholder='Phone.no' 
+      onChange={onHandleChange} name="phone" value={formData.phone}></input>
       <button>submit</button>
     </form>
 
