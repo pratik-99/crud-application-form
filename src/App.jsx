@@ -43,10 +43,11 @@ function App() {
       onChange={onHandleChange} name="age" value={formData.age}></input>
       <input placeholder='Phone.no' 
       onChange={onHandleChange} name="phone" value={formData.phone}></input>
-      <button>submit</button>
+      <button style={{backgroundColor:"skyblue", borderRadius:"5px", border:"1px solid"}}>submit</button>
     </form>
 
 
+    
     </div>
   );
 }

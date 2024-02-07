@@ -18,6 +18,8 @@ code {
   border: solid black 2px;
   display: flex;
   align-items: center;
+  gap:55px;
   margin: auto;
+  border-radius: 15px;
 }
  
