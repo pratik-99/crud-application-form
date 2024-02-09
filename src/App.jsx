@@ -21,7 +21,7 @@ function App() {
   }
   function handleSubmit(e){
     e.preventDefault()
-    setTableData(prev=>{return {...prev, formData}})
+    setTableData(prev=>[...prev, formData])
     setFormData(prev=>{return{
       firstname:"", 
       lastname:"", 
@@ -45,7 +45,28 @@ function App() {
       onChange={onHandleChange} name="phone" value={formData.phone}></input>
       <button style={{backgroundColor:"skyblue", borderRadius:"5px", border:"1px solid"}}>submit</button>
     </form>
+    
+    {tableData.length>0 &&
+    <table>
+      <thead>
+        <tr>FirstName</tr>
+        <tr>LastName</tr>
+        <tr>age</tr>
+        <tr>phone</tr>
+      </thead>
+      <tbody>
+        {tableData.map((data,index)=>(
+          <tr>
+            <td key={index}>{data.firstname}</td>
+            <td >{data.lastname}</td>
+            <td >{data.age}</td>
+            <td >{data.phone}</td>
+          </tr>
+        ))}
+      </tbody>
 
+    </table>
+      }
 
     
     </div>
