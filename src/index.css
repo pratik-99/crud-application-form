@@ -20,5 +20,6 @@ code {
   align-items: center;
   margin: auto;
   border-radius: 15px;
+  flex-direction: column;
 }
  

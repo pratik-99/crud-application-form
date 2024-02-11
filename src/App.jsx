@@ -32,27 +32,33 @@ function App() {
   console.log(tableData)
   return (
     <div className='card-box'>
-
-    <form onSubmit={handleSubmit}>
-      <input placeholder='Firstname' 
-      onChange={onHandleChange} name="firstname" value={formData.firstname}>
-      </input>
-      <input placeholder='Lastname' 
-      onChange={onHandleChange} name="lastname" value={formData.lastname}></input>
-      <input placeholder='Age' 
-      onChange={onHandleChange} name="age" value={formData.age}></input>
-      <input placeholder='Phone.no' 
-      onChange={onHandleChange} name="phone" value={formData.phone}></input>
-      <button style={{backgroundColor:"skyblue", borderRadius:"5px", border:"1px solid"}}>submit</button>
-    </form>
+     <div>
+      <form onSubmit={handleSubmit}>
+        <input placeholder='Firstname' 
+        onChange={onHandleChange} name="firstname" value={formData.firstname}>
+        </input>
+        <input placeholder='Lastname' 
+        onChange={onHandleChange} name="lastname" value={formData.lastname}></input>
+        <input placeholder='Age' 
+        onChange={onHandleChange} name="age" value={formData.age}></input>
+        <input placeholder='Phone.no' 
+        onChange={onHandleChange} name="phone" value={formData.phone}></input>
+        <button style={{backgroundColor:"skyblue", borderRadius:"5px", border:"1px solid"}}>submit</button>
+      </form>
     
+      </div> 
+      <div>
+
     {tableData.length>0 &&
     <table>
       <thead>
-        <tr>FirstName</tr>
-        <tr>LastName</tr>
-        <tr>age</tr>
-        <tr>phone</tr>
+        <tr>
+
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>age</th>
+        <th>phone</th>
+        </tr>
       </thead>
       <tbody>
         {tableData.map((data,index)=>(
@@ -68,6 +74,7 @@ function App() {
     </table>
       }
 
+      </div>
     
     </div>
   );
