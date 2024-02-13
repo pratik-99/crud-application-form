@@ -26,7 +26,8 @@ function App() {
       firstname:"", 
       lastname:"", 
       age:"",
-      phone:""}
+      phone:"",
+      email:""}
     })
   }
   console.log(tableData)
@@ -38,11 +39,17 @@ function App() {
         onChange={onHandleChange} name="firstname" value={formData.firstname}>
         </input>
         <input placeholder='Lastname' 
-        onChange={onHandleChange} name="lastname" value={formData.lastname}></input>
+        onChange={onHandleChange} name="lastname" value={formData.lastname}>
+        </input>
+        <input placeholder='email' 
+        onChange={onHandleChange} name="email" value={formData.email}>
+        </input>
         <input placeholder='Age' 
-        onChange={onHandleChange} name="age" value={formData.age}></input>
+        onChange={onHandleChange} name="age" value={formData.age}>
+        </input>
         <input placeholder='Phone.no' 
-        onChange={onHandleChange} name="phone" value={formData.phone}></input>
+        onChange={onHandleChange} name="phone" value={formData.phone}>
+        </input>
         <button style={{backgroundColor:"skyblue", borderRadius:"5px", border:"1px solid"}}>submit</button>
       </form>
     
@@ -57,6 +64,7 @@ function App() {
         <th>FirstName</th>
         <th>LastName</th>
         <th>age</th>
+        <th>email</th>
         <th>phone</th>
         </tr>
       </thead>
@@ -66,6 +74,7 @@ function App() {
             <td key={index}>{data.firstname}</td>
             <td >{data.lastname}</td>
             <td >{data.age}</td>
+            <td >{data.email}</td>
             <td >{data.phone}</td>
           </tr>
         ))}
